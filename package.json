@@ -1,0 +1,43 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "node ./node_modules/eslint/bin/eslint.js -c .eslintrc.js --ext .js --fix --ignore-path .eslintignore .",
+    "test": "cross-env NODE_ENV=test MONGO_DEBUG=false LOG_ENV=test ENVIRONMENT=test mocha -t 90000 -gc tests --exit",
+    "test:coverage": "cross-env NODE_ENV=test nyc mocha -t 90000 tests --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximing/travel-club-telegram-bot.git"
+  },
+  "author": "Maxim Ignatov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximing/travel-club-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/maximing/travel-club-telegram-bot#readme",
+  "dependencies": {
+    "@chronotech/laborx.nodejs.microservices.common": "^1.0.0",
+    "bunyan": "^1.8.15",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^7.3.0",
+    "node-telegram-bot-api": "^0.61.0",
+    "require-all": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.7.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-chronobank": "github:chronobank/eslint-plugin-chronobank",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^1.16.4"
+  }
+}
